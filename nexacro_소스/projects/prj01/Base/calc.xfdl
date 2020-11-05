@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="calc" left="0" top="0" width="431" height="215" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Div id="Div00" taborder="0" text="Div00" left="0%" top="0" height="199" width="100%">
+          <Layouts>
+            <Layout>
+              <Edit id="num1" taborder="0" left="22.27%" top="22" right="27.38%" height="44"/>
+              <Edit id="num2" taborder="1" left="22.27%" top="78" right="26.91%" height="45"/>
+              <Static id="Static00" taborder="2" text="Num 1" left="6.75%" top="26" right="65.71%" height="34" onclick="Div00_Static00_onclick"/>
+              <Static id="Static01" taborder="3" text="Num 2" onclick="Div00_Static00_onclick" left="7.01%" top="83" right="65.45%" height="34"/>
+              <Button id="btnPlus" taborder="4" text="+" left="10.13%" top="142" right="80.52%" height="34" onclick="Div00_Button00_onclick" style="font:16 Dotum;"/>
+              <Button id="btnMinus" taborder="5" text="-" left="26.49%" top="144" right="64.16%" height="34" onclick="Div00_btnMinus_onclick" style="font:16 Dotum;"/>
+              <Button id="btnProduct" taborder="6" text="*" left="44.68%" top="144" right="45.97%" height="34" onclick="Div00_btnProduct_onclick" style="font:16 Dotum;"/>
+              <Button id="btnDiv" taborder="7" text="/" left="63.38%" top="144" right="27.27%" height="34" onclick="Div00_btnDiv_onclick" style="font:16 Dotum;"/>
+              <Static id="lblResult" taborder="8" text="결과" left="77.96%" top="31" right="4.87%" height="89" style="font:20 Dotum;"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[
+this.Div00_Static00_onclick = function(obj:Static,  e:nexacro.ClickEventInfo)
+{
+	
+}
+
+this.Div00_btnPlus_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	alert('ss');
+}
+
+this.Div00_Button00_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.Div00.lblResult.set_text(parseInt(this.Div00.num1.text) + parseInt(this.Div00.num2.text));
+}
+
+this.Div00_btnMinus_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.Div00.lblResult.set_text(parseInt(this.Div00.num1.text) - parseInt(this.Div00.num2.text));
+}
+
+this.Div00_btnProduct_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.Div00.lblResult.set_text(parseInt(this.Div00.num1.text) * parseInt(this.Div00.num2.text));
+}
+
+this.Div00_btnDiv_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.Div00.lblResult.set_text(parseInt(this.Div00.num1.text) / parseInt(this.Div00.num2.text));
+}
+]]></Script>
+  </Form>
+</FDL>

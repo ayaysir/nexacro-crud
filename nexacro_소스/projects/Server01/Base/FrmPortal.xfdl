@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="FrmTest" left="0" top="0" width="420" height="240" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Button id="btnBack" taborder="0" text="돌아가기" left="76.19%" top="12" right="7.14%" height="44" onclick="btnBack_onclick"/>
+        <Button id="btnToInput" taborder="1" text="to Input" left="12.86%" top="124" right="63.1%" height="76" onclick="btnToInput_onclick"/>
+        <Button id="btnToOutput" taborder="2" text="to Output" left="42.62%" top="124" right="33.33%" height="76" onclick="btnToOutput_onclick"/>
+        <Static id="Static00" taborder="3" text="Messages" left="12.62%" top="43" right="32.62%" height="63" style="border:1 solid #808080ff ;align:center middle;font:bold 16 Dotum;"/>
+        <ImageViewer id="ImageViewer00" taborder="4" left="82.86%" top="158" right="1.9%" height="67" image="URL('frog')" stretch="fixaspectratio"/>
+        <ImageViewer id="ImageViewer01" taborder="5" left="74.29%" top="72" right="2.62%" height="89" image="URL('ponko')" stretch="fit"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[
+this.btnBack_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.go("Base::FrmMain.xfdl");
+}
+
+
+this.btnToInput_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.go("Base::FrmInput.xfdl");
+}
+
+// Deploy: WEB-CONTENT 폴더에서 실행
+this.btnToOutput_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.go("Base::FrmOutput.xfdl");
+}
+]]></Script>
+  </Form>
+</FDL>

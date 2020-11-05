@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="pwdconfirm" left="0" top="0" width="447" height="223" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Div id="Div00" taborder="0" text="Div00" left="1.79%" top="10" right="4.47%" height="192">
+          <Layouts>
+            <Layout>
+              <Edit id="Edit00" taborder="0" left="6.92%" top="16" right="37.95%" height="54" password="true"/>
+              <Edit id="Edit01" taborder="1" password="true" left="7.64%" top="94" right="37.23%" height="54" oneditclick="Div00_Edit01_oneditclick" onkeyup="Div00_Edit01_oneditclick"/>
+              <Static id="Static00" taborder="2" text="결과" left="67.3%" top="26" right="1.19%" height="123" style="font:14 Dotum;"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[
+this.Div00_Edit01_oneditclick = function(obj:Edit,  e:nexacro.EditClickEventInfo)
+{
+	var pwd1 = this.Div00.Edit00.text;
+	var pwd2 = this.Div00.Edit01.text;
+	if(pwd1 == pwd2){
+		this.Div00.Static00.set_text("같다.");
+	} else {
+		this.Div00.Static00.set_text("틀리다.");
+	}
+}
+]]></Script>
+  </Form>
+</FDL>

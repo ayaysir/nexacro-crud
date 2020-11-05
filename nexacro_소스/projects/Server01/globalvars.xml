@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GlobalVariables>
+  <Images>
+    <Image id="frog" url="..\..\..\..\Pictures\_91408619_55df76d5-2245-41c1-8031-07a4da3f313f.jpg"/>
+    <Image id="ponko" url="D:\workspace\PRJ1\WebContent\img\ponko.png"/>
+  </Images>
+  <Variable id="frogName" initval="Pepe"/>
+</GlobalVariables>

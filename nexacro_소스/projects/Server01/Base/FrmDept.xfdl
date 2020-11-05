@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="FrmDept" left="0" top="0" width="375" height="371" titletext="New Form" onload="FrmDept_onload">
+    <Layouts>
+      <Layout>
+        <ListBox id="ListBox00" taborder="0" left="5.6%" top="11" right="13.6%" height="318" onitemclick="ListBox00_onitemclick" innerdataset="@DSET_DEPTLIST" codecolumn="deptTitle" datacolumn="deptTitle"/>
+        <MaskEdit id="MaskEdit00" taborder="1" left="35.73%" top="345" right="17.87%" height="20" oneditclick="MaskEdit00_oneditclick" mask="#,#,#" type="number"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="DSET_DEPTLIST">
+        <ColumnInfo>
+          <Column id="deptId" type="STRING" size="256"/>
+          <Column id="deptTitle" type="STRING" size="256"/>
+          <Column id="locationCode" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">if (1 &lt; 5) ? "true" : "false"</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+this.FrmDept_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	var id = "outputProc";
+    var url = "../list.dept";
+    var reqDs = "";
+    var respDs = "DSET_DEPTLIST=response";
+    var args = "";
+    var callback = "";
+    
+    this.transaction(id, url, reqDs, respDs, args, callback);
+}
+
+this.ListBox00_onitemclick = function(obj:ListBox, e:nexacro.ListBoxClickEventInfo)
+{
+	
+}
+
+this.MaskEdit00_oneditclick = function(obj:MaskEdit,  e:nexacro.EditClickEventInfo)
+{
+	
+}
+]]></Script>
+  </Form>
+</FDL>

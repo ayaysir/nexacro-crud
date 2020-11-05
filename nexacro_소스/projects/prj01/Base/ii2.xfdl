@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="ii2" left="0" top="0" width="762" height="508" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Div id="Div00" taborder="0" text="Div00" left="1.04%" top="8" right="3.97%" height="469" style="background:gainsboro;">
+          <Layouts>
+            <Layout width="724" height="469">
+              <Combo id="Combo00" taborder="0" text="Combo00" left="2.62%" top="16" right="59.12%" height="48" innerdataset="@DsCombo" codecolumn="fruits" datacolumn="fruits" onitemchanged="Div00_Combo00_onitemchanged"/>
+              <ListBox id="ListBox00" taborder="1" left="3.45%" top="82" right="80.94%" height="134" innerdataset="@DsCombo" codecolumn="fruits" datacolumn="price"/>
+              <Grid id="Grid00" taborder="2" useinputpanel="false" left="21.55%" top="82" right="35.91%" height="132" binddataset="DsCombo">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Col size="80"/>
+                      <Col size="80"/>
+                      <Col size="80"/>
+                    </Columns>
+                    <Rows>
+                      <Row band="head" size="24"/>
+                      <Row band="body" size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell col="0" disptype="normal" text="id"/>
+                      <Cell col="1" disptype="normal" text="fruits"/>
+                      <Cell col="2" disptype="normal" text="price"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell col="0" disptype="normal" text="bind:id"/>
+                      <Cell col="1" disptype="normal" text="bind:fruits"/>
+                      <Cell col="2" disptype="normal" text="bind:price"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Static id="Static00" taborder="3" text="데이터셋은 서버와 연결하는 최소단위" left="44.75%" top="16" right="19.34%" height="38"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="DsCombo">
+        <ColumnInfo>
+          <Column id="id" type="STRING" size="100"/>
+          <Column id="fruits" type="STRING" size="100"/>
+          <Column id="price" type="INT" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="id">1001</Col>
+            <Col id="fruits">Apple</Col>
+            <Col id="price">1000</Col>
+          </Row>
+          <Row>
+            <Col id="id">1002</Col>
+            <Col id="fruits">Orange</Col>
+            <Col id="price">1500</Col>
+          </Row>
+          <Row>
+            <Col id="id">1003</Col>
+            <Col id="fruits">Banana</Col>
+            <Col id="price">2000</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind/>
+    <Script type="xscript5.0"><![CDATA[
+this.Div00_Combo00_onitemchanged = function(obj:Combo, e:nexacro.ItemChangeEventInfo)
+{
+	
+}
+]]></Script>
+  </Form>
+</FDL>

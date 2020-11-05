@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="input" left="0" top="0" width="597" height="213" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Div id="Div00" taborder="0" text="Div00" left="0%" top="1" right="0.17%" height="210">
+          <Layouts>
+            <Layout>
+              <Edit id="Edit00" taborder="0" left="7.05%" top="45" right="57.21%" height="69" oneditclick="Div00_Edit00_oneditclick" onkeyup="Div00_Edit00_onkeyup"/>
+              <Button id="Button00" taborder="1" text="출력" left="47.48%" top="45" right="26.51%" height="69" onclick="Div00_Button00_onclick"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[
+this.Div00_Button00_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	alert(this.Div00.Edit00.text);
+}
+
+this.Div00_Edit00_oneditclick = function(obj:Edit,  e:nexacro.EditClickEventInfo)
+{
+	
+}
+
+this.Div00_Edit00_onkeyup = function(obj:Edit, e:nexacro.KeyEventInfo)
+{
+	
+}
+]]></Script>
+  </Form>
+</FDL>

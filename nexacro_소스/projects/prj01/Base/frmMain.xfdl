@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="frmMain" left="0" top="0" width="800" height="600" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Div id="Div00" taborder="0" text="Div00" left="0%" top="0" height="204" width="100%">
+          <Layouts>
+            <Layout>
+              <Button id="Button00" taborder="0" text="Alert" left="4%" top="37" right="70.13%" height="136" onclick="Div00_Button00_onclick"/>
+              <Button id="Button01" taborder="1" text="Confirm" left="30.63%" top="36" right="44.13%" height="137" onclick="Div00_Button01_onclick"/>
+              <Button id="Button02" taborder="2" text="aaa" left="56.75%" top="39" right="20.88%" height="134" onmouseenter="mouseover" onmouseleave="mouseleft"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[
+this.Div00_Button00_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	alert("경고");
+}
+
+this.Div00_Button01_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	confirm("Y/N");
+}
+
+// 변수 선언
+var originText = this.Div00.Button02.text;
+var changeText = "MOUSE";
+
+// 바인딩
+this.mouseover = function() {
+	// set_text, text(get)
+	this.Div00.Button02.set_text(changeText);
+}
+
+this.mouseleft = function() {
+	// set_text, text(get)
+	this.Div00.Button02.set_text(originText);
+	alert(changeText);
+}
+
+]]></Script>
+  </Form>
+</FDL>

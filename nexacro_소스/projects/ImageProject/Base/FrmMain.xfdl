@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="FrmMain" left="0" top="0" width="306" height="453" titletext="New Form" onload="FrmMain_onload">
+    <Layouts>
+      <Layout>
+        <ListBox id="ListBox00" taborder="0" left="2.51%" top="25" right="26.82%" height="347"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="DatasetDepartmentList"/>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+this.FrmMain_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	var id = "outputProc";
+    var url = "../";
+    var reqDs = "";
+    var respDs = "DatasetMessages=response";
+    var args = "";
+    var callback = "received";
+    
+    this.transaction(id, url, reqDs, respDs, args, callback);
+}
+]]></Script>
+  </Form>
+</FDL>

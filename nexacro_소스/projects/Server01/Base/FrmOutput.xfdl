@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="FrmOutput" left="0" top="0" width="420" height="380" titletext="New Form" onload="loadData">
+    <Layouts>
+      <Layout>
+        <Grid id="Grid00" taborder="0" useinputpanel="false" left="5.48%" top="48" height="284" width="80.24%" binddataset="DatasetMessages">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="57"/>
+                <Column size="104"/>
+                <Column size="332"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="seq"/>
+                <Cell col="1" text="writer"/>
+                <Cell col="2" text="message"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:seq"/>
+                <Cell col="1" text="bind:writer"/>
+                <Cell col="2" text="bind:message"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="btnBack" taborder="1" text="돌아가기" left="26.67%" top="338" right="26.67%" height="30" onclick="btnBack_onclick"/>
+        <Static id="Static00" taborder="2" text="Output" left="4.76%" top="10" right="5.71%" height="33" style="font:16 맑은 고딕;"/>
+        <ImageViewer id="ImageViewer00" taborder="3" left="88.33%" top="328" right="2.86%" height="39" onclick="ImageViewer00_onclick" image="URL('frog')" stretch="fit"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="DatasetMessages">
+        <ColumnInfo>
+          <Column id="seq" type="INT" size="4"/>
+          <Column id="writer" type="STRING" size="20"/>
+          <Column id="message" type="STRING" size="300"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[
+this.btnBack_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.go("Base::FrmPortal.xfdl");
+}
+
+// 폼의 onload시 불러올 이벤트
+this.loadData = function() {
+	var id = "outputProc";
+	var url = "../output.msg";
+	var reqDs = "";
+	var respDs = "DatasetMessages=response";
+	var args = "";
+	var callback = "received";
+	
+	this.transaction(id, url, reqDs, respDs, args, callback);
+}
+
+
+this.received = function() {
+	alert("통신완료");
+}
+
+
+this.ImageViewer00_onclick = function(obj:ImageViewer,  e:nexacro.ClickEventInfo)
+{
+	alert(application.frogName);
+}
+]]></Script>
+  </Form>
+</FDL>
